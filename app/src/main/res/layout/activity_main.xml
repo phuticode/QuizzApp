@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.quizzapp.MainActivity"
+    android:background="@drawable/quizz3"
+
+    >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quizz App"
+        android:textSize="60sp"
+        android:layout_margin="8dp"
+        android:id="@+id/textView"
+        android:textColor="@color/white"
+        android:background="@color/green"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_message"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:background="@color/orange"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+
+
+
+
+        />
+
+    <RadioGroup
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/rdg"
+        android:layout_gravity="center"
+         android:layout_marginLeft="18dp"
+         android:layout_marginRight="18dp"
+         android:layout_marginTop="8dp"
+         android:layout_marginBottom="50dp"
+        android:gravity="center_vertical"
+
+        android:background="@color/darkPurple"
+
+
+
+        >
+
+        <RadioButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/fashion"
+            android:id="@+id/fashion"
+            android:textColor="@color/orange"
+            android:textSize="40sp"
+            />
+        <RadioButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/Health"
+            android:id="@+id/health"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            />
+        <RadioButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/Relationships"
+            android:id="@+id/relationships"
+            android:textColor="@color/turquoise"
+            android:textSize="40sp"
+            />
+        </RadioGroup>
+
+</LinearLayout>
