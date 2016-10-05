@@ -2,6 +2,99 @@
     <string name="app_name">Quizz App</string>
     <string name="fashion">Fashion</string>
     <string name="Health">Health </string>
-    <string name="Relationships">Relationships </string>
-    <string name="welcome_message">Welcome To Quiz App.You are given three categories below, of which each contain 5 questions with three possible answers. Choose a topic and answer away...Results will be provided after all five questions have been answered. ENJOY!!! </string>
+    <string name="Sports">Sports </string>
+    <string name="welcome_message">Welcome To Quiz App.You are given three categories below, of which each contain 5 questions with three possible answers. Choose a topic and answer away...
+        \n Results will be provided after all five questions have been answered. ENJOY!!! </string>
+
+    //Fashion one Questions
+    <string name="nn_vintage">NN Vintage is a South African based clothing label.Who is the owner? </string>
+    //nn_vintage options
+    <string name="rdbNonhle_Ndala">Nonhle Ndala</string>
+    <string name="rdbNakhane_Toure">Nakhane Toure </string>
+    <string name="rdbNhlanhla_Nciza">Nhlanhla_Nciza </string>
+
+    <string name="Louis_Vuitton">Which brand was named the world"'"s most valuable luxury brand between 2006-2012? </string>
+    // Louis_Vuitton options
+    <string name="rdbPrada">Prada</string>
+    <string name="rdbLouisV">Louis_Vuitton </string>
+    <string name="rdbGucci">Gucci</string>
+
+    <string name="Nike">Which famous sports apparel company was founded on the 25th January 1964, as Blue Ribon Sports? </string>
+    //nike options
+    <string name="rdbNike">Nike</string>
+    <string name="rdbAdidas">Adidas </string>
+    <string name="rdbPuma">Puma</string>
+
+    <string name="Jeans">What type of garment was invented by Levis Strauss &amp; Co.? </string>
+    //Jeans options
+    <string name="rdbJeans">Jeans</string>
+    <string name="rdbDenim">Denim</string>1
+    <string name="rdbDungaree">Dungaree</string>
+
+    <string name="Stiletto">Which type of shoe has a long, thin, pointy heel? </string>
+    //Stiletto options
+    <string name="rdbStilleto">Stilleto</string>
+    <string name="rdbPump">High Heel Pumps </string>
+    <string name="rdbSandal">High Heel Sandals dals</string>
+
+    //Health 2 questions
+    <string name="Water">What is the most vital to all source of life? </string>
+    //water options
+    <string name="rdbFood">Food</string>
+    <string name="rdbOxygen">Oxygen</string>
+    <string name="rdbWater">Water</string>
+
+    <string name="Pregnancy">Which of the following "'"conditions"'" requires an additional 300 calories per day? </string>
+    //pregnancy options
+    <string name="rdbMalnutrition">Malnutririon</string>
+    <string name="rdbPregnancy">Pregnancy</string>
+    <string name="rdbAnorexia">Anorexia</string>
+
+    <string name="Weight_Loss">True or False?Snacking is a bad idea when you are trying to loose weight. </string>
+    //Weight_loss options
+    <string name="rdbTrue">True</string>
+    <string name="rdbFalse">False</string>
+
+    <string name="Jogging">Which of the activities below lowers one"'"s testosterone levels? </string>
+    //jogging options
+    <string name="rdbJogging">Jogging</string>
+    <string name="rdbVodka">Vodka</string>
+    <string name="rdbSex">Little Or No Sexual Intercourse</string>
+
+    <string name="Eggs">Which "'"super-food"'" turns yellow when ripe? </string>
+
+    //Egg options
+    <string name="rdbEgg">Egg</string>
+    <string name="rdbOrange">Orange</string>
+    <string name="rdbPawPaw">Paw-Paw</string>
+
+
+    //Sports Questions
+    <string name="Jockeys">It is customary for ___________ to be paid in coins, no matter how arge their winnings </string>
+    //jockey options
+    <string name="rdbBasketBall">Basket Ball Players</string>
+    <string name="rdbJockeys">Jockeys</string>
+    <string name="rdbOlympians">Olympians</string>
+    <string name="Golf_balls">Which balls were originally made of dried cow eyeballs? </string>
+    //golf balls options
+    <string name="rdbGolf">Golf Balls</string>
+    <string name="rdbTennis">Tennis Balls</string>
+    <string name="rdbCricket">Cricket Balls</string>
+    <string name="Tennis_Great_Britain">Where does Tennis originate from?</string>
+    //tennis options
+    <string name="rdbUsa">Usa</string>
+    <string name="rdbWimbledon">Wimbledon</string>
+    <string name="rdbBritain">Great Britain</string>
+    <string name="Christiano_Ronaldo">Which soccer player opened a museum dedicated to himself in 2013? </string>
+    //christiano options
+    <string name="rdbChristiano">Christiano Ronaldo</string>
+    <string name="rdbLionel">Lionel Messi</string>
+    <string name="rdbDavidBekham">David Beckham</string>
+    <string name="Soccer">Which is the most popular sports in the world? </string>
+    //soccer options
+    <string name="rdbSoccer">Soccer</string>
+    <string name="rdbBasketball">Basketball</string>
+    <string name="rdbSwimming">Swimming</string>
+
+
 </resources>
