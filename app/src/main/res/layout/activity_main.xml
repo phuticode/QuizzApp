@@ -4,80 +4,90 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context="com.example.android.quizzapp.MainActivity"
-    android:background="@drawable/quizz3"
 
     >
 
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quizz App"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:fontFamily="casual"
+        android:paddingLeft="30dp"
+        android:text="@string/app_name"
+        android:textColor="@color/green"
         android:textSize="60sp"
-        android:layout_margin="8dp"
-        android:id="@+id/textView"
-        android:textColor="@color/white"
-        android:background="@color/green"
 
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_message"
         android:layout_centerHorizontal="true"
-        android:layout_margin="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
         android:background="@color/orange"
+        android:fontFamily="casual"
+        android:padding="8dp"
+        android:text="@string/welcome_message"
         android:textColor="@color/white"
-        android:textSize="20sp"
-
-
-
+        android:textSize="18sp"
 
         />
 
     <RadioGroup
+        android:id="@+id/rdgMain"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:id="@+id/rdg"
         android:layout_gravity="center"
-         android:layout_marginLeft="18dp"
-         android:layout_marginRight="18dp"
-         android:layout_marginTop="8dp"
-         android:layout_marginBottom="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:background="@color/white"
         android:gravity="center_vertical"
-
-        android:background="@color/darkPurple"
-
-
+        android:paddingLeft="40dp"
 
         >
 
         <RadioButton
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/fashion"
             android:id="@+id/fashion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/orange"
+            android:fontFamily="casual"
+            android:text="@string/fashion"
             android:textColor="@color/orange"
-            android:textSize="40sp"
-            />
+            android:textSize="40sp" />
+
         <RadioButton
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/Health"
             android:id="@+id/health"
-            android:textColor="@color/green"
-            android:textSize="40sp"
-            />
-        <RadioButton
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/Relationships"
-            android:id="@+id/relationships"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/green"
+            android:fontFamily="casual"
+            android:text="@string/Health"
+            android:textColor="@color/green"
+            android:textSize="40sp" />
+
+        <RadioButton
+            android:id="@+id/sports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/turquoise"
+            android:fontFamily="casual"
+            android:text="@string/Sports"
             android:textColor="@color/turquoise"
-            android:textSize="40sp"
-            />
-        </RadioGroup>
+            android:textSize="40sp" />
+    </RadioGroup>
+
 
 </LinearLayout>

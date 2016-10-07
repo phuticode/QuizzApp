@@ -33,11 +33,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         super.onCreate(savedInstanceState);
         setContentView(activity_main);
 
-        /*
-         * Find the views declared in main.xml.
-         */
         radioM = (RadioGroup) findViewById(R.id.rdgMain);
         radioM.setOnCheckedChangeListener(this);
+
 
     }
 
@@ -52,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         intent.putExtra("Head", heading);
         startActivity(intent);
     }
+
 }
 
 

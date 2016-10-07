@@ -3,65 +3,25 @@ package com.example.android.quizzapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.ViewPropertyAnimatorCompatSet;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 import static com.example.android.quizzapp.R.id.david;
-import static com.example.android.quizzapp.R.id.fashion;
 import static com.example.android.quizzapp.R.id.greatBritain;
 
-import static com.example.android.quizzapp.R.id.nakhane;
-import static com.example.android.quizzapp.R.id.nonhle;
-import static com.example.android.quizzapp.R.id.rdgGolf;
-import static com.example.android.quizzapp.R.id.rdgJockeys;
-import static com.example.android.quizzapp.R.id.rdgLV;
-import static com.example.android.quizzapp.R.id.rdgNN_Vintage;
-import static com.example.android.quizzapp.R.id.rdgWater;
-import static com.example.android.quizzapp.R.id.sports;
 import static com.example.android.quizzapp.R.id.swimming;
-import static com.example.android.quizzapp.R.id.topic;
 import static com.example.android.quizzapp.R.layout.activity_questions;
 
-public class Questions extends AppCompatActivity {
+public class questionContainer extends AppCompatActivity {
 
     RadioGroup radioM;
 
     //Global Variables
     ViewFlipper VF;
     TextView topic;
-    RadioButton selected;
-    private View.OnClickListener radio_listener = new View.OnClickListener() {
-        public void onClick(View v) {
-
-            switch (v.getId()) {
-                case R.id.nonhle:
-                    VF.setDisplayedChild(0);
-                    VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJockeys)));
-                    break;
-                case R.id.health:
-                    VF.setDisplayedChild(1);
-                    VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJockeys)));
-
-                    break;
-                case R.id.sports:
-                    VF.setDisplayedChild(2);
-                    VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJockeys)));
-
-                    break;
-            }
-        }
-    };
-
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        //  selected = (RadioButton) findViewById(i);
-
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,31 +45,6 @@ public class Questions extends AppCompatActivity {
         RadioButton radNakhane = (RadioButton) findViewById(R.id.nakhane);
         RadioButton radNhlanhla = (RadioButton) findViewById(R.id.nhlanhla);
 
-        rdgNN.setOnClickListener(radio_listener);
-        rdgNN.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                switch (checkedId) { //set the Model to hold the answer the user picked
-
-                    case R.id.nonhle:
-                        VF.setDisplayedChild(0);
-                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
-                        break;
-                    case R.id.nakhane:
-                        VF.setDisplayedChild(1);
-                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
-                        break;
-                    case R.id.nhlanhla:
-                        VF.setDisplayedChild(2);
-                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
-                        VF.showNext();
-                        break;
-
-                }
-
-            }
-        });
 
 
     /*

@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quizz3"
+    android:orientation="vertical"
+    android:weightSum="1"
+
+    tools:context="com.example.android.quizzapp.MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:fontFamily="casual"
+        android:paddingLeft="30dp"
+        android:text="@string/app_name"
+        android:textColor="@color/green"
+        android:textSize="60sp"
+
+        />
+
+    <TextView
+        android:id="@+id/topic"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@color/orange"
+        android:fontFamily="casual"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+
+        />
+
+    <TextView
+        android:id="@+id/questions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/darkPurple"
+        android:fontFamily="sans-serif-condensed"
+        android:paddingLeft="30dp"
+        android:text="@string/nn_vintage"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+
+        />
+
+    <ViewFlipper
+        android:id="@+id/ViewFlipper"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+
+        <RadioGroup
+            android:id="@+id/rdgNN_Vintage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+
+
+            >
+
+            <RadioButton
+                android:id="@+id/nonhle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/rdbNonhle_Ndala"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/nakhane"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/rdbNakhane_Toure"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/nhlanhla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/rdbNhlanhla_Nciza"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/rdgLV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/prada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbPrada" />
+
+            <RadioButton
+                android:id="@+id/louisV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbLouisV" />
+
+            <RadioButton
+                android:id="@+id/gucci"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbGucci" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rdgNike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/nike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbNike" />
+
+            <RadioButton
+                android:id="@+id/adidas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbAdidas" />
+
+            <RadioButton
+                android:id="@+id/puma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbPuma" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rdgJeans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/jeans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbJeans" />
+
+            <RadioButton
+                android:id="@+id/denim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbDenim" />
+
+            <RadioButton
+                android:id="@+id/dungaree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbDungaree" />
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/rdgHeels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/stilleto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbStilleto" />
+
+            <RadioButton
+                android:id="@+id/pump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbPump" />
+
+            <RadioButton
+                android:id="@+id/sandal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbSandal" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rdgWater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbFood" />
+
+            <RadioButton
+                android:id="@+id/oxygen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbOxygen" />
+
+            <RadioButton
+                android:id="@+id/water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbWater" />
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/rdgPregnancy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/malnutrition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbMalnutrition" />
+
+            <RadioButton
+                android:id="@+id/pregnancy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbPregnancy" />
+
+            <RadioButton
+                android:id="@+id/anorexia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbAnorexia" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rdgWeight_Loss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/True"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbTrue" />
+
+            <RadioButton
+                android:id="@+id/False"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbFalse" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rdgJogging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/jogging"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbJogging" />
+
+            <RadioButton
+                android:id="@+id/vodka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbVodka" />
+
+            <RadioButton
+                android:id="@+id/sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbSex" />
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/rdgEggs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/egg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbEgg" />
+
+            <RadioButton
+                android:id="@+id/orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbOrange" />
+
+            <RadioButton
+                android:id="@+id/pawpaw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbPawPaw" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rdgJockeys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/basketBall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbBasketball" />
+
+            <RadioButton
+                android:id="@+id/jockeys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbJockeys" />
+
+            <RadioButton
+                android:id="@+id/olympians"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbOlympians" />
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/rdgGolf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/golf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbGolf" />
+
+            <RadioButton
+                android:id="@+id/tennis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbTennis" />
+
+            <RadioButton
+                android:id="@+id/cricket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbCricket" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/tennisSport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/usa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbUsa" />
+
+            <RadioButton
+                android:id="@+id/wimbledon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbWimbledon" />
+
+            <RadioButton
+                android:id="@+id/greatBritain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbBritain" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/christianoRonaldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/ronaldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbChristiano" />
+
+            <RadioButton
+                android:id="@+id/lionel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbLionel" />
+
+            <RadioButton
+                android:id="@+id/david"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbDavidBekham" />
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/football"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/soccer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbSoccer" />
+
+            <RadioButton
+                android:id="@+id/basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbBasketBall" />
+
+            <RadioButton
+                android:id="@+id/swimming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="@string/rdbSwimming" />
+        </RadioGroup>
+    </ViewFlipper>
+</LinearLayout>
