@@ -482,5 +482,18 @@
                 android:fontFamily="casual"
                 android:text="@string/rdbSwimming" />
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/results"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/darkPurple"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingLeft="30dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+
+            />
     </ViewFlipper>
 </LinearLayout>

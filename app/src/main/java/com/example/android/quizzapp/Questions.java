@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.LV;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 import static com.example.android.quizzapp.R.id.david;
 import static com.example.android.quizzapp.R.id.fashion;
@@ -27,7 +28,8 @@ import static com.example.android.quizzapp.R.id.swimming;
 import static com.example.android.quizzapp.R.id.topic;
 import static com.example.android.quizzapp.R.layout.activity_questions;
 
-public class Questions extends AppCompatActivity {
+public class Questions extends AppCompatActivity
+{
 
     RadioGroup radioM;
 
@@ -35,36 +37,12 @@ public class Questions extends AppCompatActivity {
     ViewFlipper VF;
     TextView topic;
     RadioButton selected;
-    private View.OnClickListener radio_listener = new View.OnClickListener() {
-        public void onClick(View v) {
+    TextView question;
 
-            switch (v.getId()) {
-                case R.id.nonhle:
-                    VF.setDisplayedChild(0);
-                    VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJockeys)));
-                    break;
-                case R.id.health:
-                    VF.setDisplayedChild(1);
-                    VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJockeys)));
-
-                    break;
-                case R.id.sports:
-                    VF.setDisplayedChild(2);
-                    VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJockeys)));
-
-                    break;
-            }
-        }
-    };
-
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        //  selected = (RadioButton) findViewById(i);
-
-
-    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(activity_questions);
 
@@ -76,6 +54,25 @@ public class Questions extends AppCompatActivity {
         topic.setText(top);
 
         VF = (ViewFlipper) findViewById(R.id.ViewFlipper);
+        question = (TextView) findViewById(R.id.questions);
+
+        if (top.equalsIgnoreCase("fashion"))
+        {
+            question.setText(getString(R.string.nn_vintage));
+            VF.setDisplayedChild(0);
+            VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgNN_Vintage)));
+        } else if (top.equalsIgnoreCase("health"))
+        {
+            question.setText(getString(R.string.Water));
+            VF.setDisplayedChild(0);
+            VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgWater)));
+        } else if (top.equalsIgnoreCase("sports"))
+        {
+            question.setText(getString(R.string.Jockeys));
+            VF.setDisplayedChild(0);
+            VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJockeys)));
+        }
+
 
         /*
          * Find the views declared in questions.xml. for nn_Vintage
@@ -85,16 +82,25 @@ public class Questions extends AppCompatActivity {
         RadioButton radNakhane = (RadioButton) findViewById(R.id.nakhane);
         RadioButton radNhlanhla = (RadioButton) findViewById(R.id.nhlanhla);
 
-        rdgNN.setOnClickListener(radio_listener);
-        rdgNN.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
+        rdgNN.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
 
-                switch (checkedId) { //set the Model to hold the answer the user picked
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+                question.setText(getString(R.string.nn_vintage));
+
+                RadioButton sl = (RadioButton) findViewById(checkedId);
+
+                String selected = sl.getText().toString();
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
 
                     case R.id.nonhle:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
+                        topic.setText("Fashion");
                         break;
                     case R.id.nakhane:
                         VF.setDisplayedChild(1);
@@ -103,35 +109,84 @@ public class Questions extends AppCompatActivity {
                     case R.id.nhlanhla:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
-                        VF.showNext();
                         break;
 
                 }
-
+                question.setText(getString(R.string.Louis_Vuitton));
             }
         });
-
-
-    /*
-     * Define a OnClickListener that will change which view that is displayed by
-     * the ViewFlipper
-     */
-
-           /*
-         * Find the views declared in questions.xml. for LV
-         */
+       /* Find the views declared in questions.xml. for LV
+                */
         RadioGroup rdgLV = (RadioGroup) findViewById(R.id.rdgLV);
         RadioButton radPrada = (RadioButton) findViewById(R.id.prada);
         RadioButton radLoius = (RadioButton) findViewById(R.id.louisV);
         RadioButton radGucci = (RadioButton) findViewById(R.id.gucci);
 
-           /*
+        rdgLV.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.prada:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgNike)));
+
+                        break;
+                    case R.id.louisV:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgNike)));
+                        break;
+                    case R.id.gucci:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgNike)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Nike));
+            }
+        });
+
+          /*
          * Find the views declared in questions.xml. for Nike
          */
         RadioGroup rdgNike = (RadioGroup) findViewById(R.id.rdgNike);
         RadioButton radNike = (RadioButton) findViewById(R.id.nike);
         RadioButton radAdidas = (RadioButton) findViewById(R.id.adidas);
         RadioButton radPuma = (RadioButton) findViewById(R.id.puma);
+
+        rdgNike.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.nike:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgHeels)));
+                        break;
+                    case R.id.adidas:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgHeels)));
+                        break;
+                    case R.id.puma:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgHeels)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Stiletto));
+            }
+        });
+
+
 
            /*
          * Find the views declared in questions.xml. for Heels
@@ -141,6 +196,33 @@ public class Questions extends AppCompatActivity {
         RadioButton radPump = (RadioButton) findViewById(R.id.pump);
         RadioButton radSandal = (RadioButton) findViewById(R.id.sandal);
 
+        rdgHeels.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.stilleto:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJeans)));
+                        break;
+                    case R.id.pump:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJeans)));
+                        break;
+                    case R.id.sandal:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJeans)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Jeans));
+            }
+        });
+
            /*
          * Find the views declared in questions.xml. for Jeans
          */
@@ -149,6 +231,32 @@ public class Questions extends AppCompatActivity {
         RadioButton radDenim = (RadioButton) findViewById(R.id.denim);
         RadioButton radDungaree = (RadioButton) findViewById(R.id.dungaree);
 
+        rdgJeans.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.jeans:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        break;
+                    case R.id.denim:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        break;
+                    case R.id.dungaree:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        break;
+
+                }
+
+            }
+        });
            /*
          * Find the views declared in questions.xml. for Water
          */
@@ -156,6 +264,34 @@ public class Questions extends AppCompatActivity {
         RadioButton radFood = (RadioButton) findViewById(R.id.food);
         RadioButton radOxygen = (RadioButton) findViewById(R.id.oxygen);
         RadioButton radWater = (RadioButton) findViewById(R.id.water);
+
+        rdgWater.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.food:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgPregnancy)));
+
+                        break;
+                    case R.id.oxygen:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgPregnancy)));
+                        break;
+                    case R.id.water:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgPregnancy)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Pregnancy));
+            }
+        });
 
            /*
          * Find the views declared in questions.xml. for pregnancy
@@ -165,12 +301,64 @@ public class Questions extends AppCompatActivity {
         RadioButton radPregnancy = (RadioButton) findViewById(R.id.pregnancy);
         RadioButton radAnorexia = (RadioButton) findViewById(R.id.anorexia);
 
+        rdgPregnancy.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.malnutrition:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgWeight_Loss)));
+
+                        break;
+                    case R.id.pregnancy:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgWeight_Loss)));
+                        break;
+                    case R.id.anorexia:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgWeight_Loss)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Weight_Loss));
+            }
+        });
+
            /*
          * Find the views declared in questions.xml. for weight-loss
          */
         RadioGroup rdgWeight = (RadioGroup) findViewById(R.id.rdgWeight_Loss);
         RadioButton radTrue = (RadioButton) findViewById(R.id.True);
         RadioButton radFalse = (RadioButton) findViewById(R.id.False);
+
+        rdgWeight.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.True:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJogging)));
+
+                        break;
+                    case R.id.False:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJogging)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Jogging));
+            }
+        });
 
            /*
          * Find the views declared in questions.xml. for Jogging
@@ -180,6 +368,33 @@ public class Questions extends AppCompatActivity {
         RadioButton radVodka = (RadioButton) findViewById(R.id.vodka);
         RadioButton radSex = (RadioButton) findViewById(R.id.sex);
 
+        rdgJogging.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.jogging:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgEggs)));
+
+                        break;
+                    case R.id.vodka:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgEggs)));
+                        break;
+                    case R.id.sex:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgEggs)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Eggs));
+            }
+        });
            /*
          * Find the views declared in questions.xml. for Eggs
          */
@@ -187,6 +402,33 @@ public class Questions extends AppCompatActivity {
         RadioButton radEggs = (RadioButton) findViewById(R.id.egg);
         RadioButton radOrange = (RadioButton) findViewById(R.id.orange);
         RadioButton radPawpaw = (RadioButton) findViewById(R.id.pawpaw);
+
+        rdgEggs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.egg:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        break;
+                    case R.id.orange:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        break;
+                    case R.id.pawpaw:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        break;
+
+                }
+
+            }
+        });
 
            /*
          * Find the views declared in questions.xml. for Jockeys
@@ -196,6 +438,33 @@ public class Questions extends AppCompatActivity {
         RadioButton radJockeys = (RadioButton) findViewById(R.id.jockeys);
         RadioButton radOlympians = (RadioButton) findViewById(R.id.olympians);
 
+        rdgJockeys.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.basketBall:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgGolf)));
+                        break;
+                    case R.id.jockeys:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgGolf)));
+                        break;
+                    case R.id.olympians:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgGolf)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Golf_balls));
+            }
+        });
+
            /*
          * Find the views declared in questions.xml. for Golf Balls
          */
@@ -204,6 +473,32 @@ public class Questions extends AppCompatActivity {
         RadioButton radTennis = (RadioButton) findViewById(R.id.tennis);
         RadioButton radCricket = (RadioButton) findViewById(R.id.cricket);
 
+        rdgGolf.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.golf:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.tennisSport)));
+                        break;
+                    case R.id.tennis:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.tennisSport)));
+                        break;
+                    case R.id.cricket:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.tennisSport)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Tennis_Great_Britain));
+            }
+        });
            /*
          * Find the views declared in questions.xml. for Tennis
          */
@@ -212,6 +507,32 @@ public class Questions extends AppCompatActivity {
         RadioButton rdbWimbledon = (RadioButton) findViewById(R.id.wimbledon);
         RadioButton rdbGreat = (RadioButton) findViewById(greatBritain);
 
+        rdgTennisSport.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.usa:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.christianoRonaldo)));
+                        break;
+                    case R.id.wimbledon:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.christianoRonaldo)));
+                        break;
+                    case R.id.greatBritain:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.christianoRonaldo)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Tennis_Great_Britain));
+            }
+        });
         /*
          * Find the views declared in questions.xml. for Christiano
          */
@@ -220,6 +541,32 @@ public class Questions extends AppCompatActivity {
         RadioButton rdbLionel = (RadioButton) findViewById(R.id.lionel);
         RadioButton rdbDavid = (RadioButton) findViewById(david);
 
+        rdgChristiano.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.ronaldo:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.football)));
+                        break;
+                    case R.id.lionel:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.football)));
+                        break;
+                    case R.id.david:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.football)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Soccer));
+            }
+        });
           /*
          * Find the views declared in questions.xml. for Soccer
          */
@@ -228,10 +575,33 @@ public class Questions extends AppCompatActivity {
         RadioButton rdbBasket = (RadioButton) findViewById(R.id.basket);
         RadioButton rdbSwimming = (RadioButton) findViewById(swimming);
 
+        rdgFootball.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
 
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                switch (checkedId)
+                { //set the Model to hold the answer the user picked
+
+                    case R.id.soccer:
+                        VF.setDisplayedChild(0);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        break;
+                    case R.id.basket:
+                        VF.setDisplayedChild(1);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        break;
+                    case R.id.swimming:
+                        VF.setDisplayedChild(2);
+                        VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        break;
+
+                }
+                question.setText(getString(R.string.Soccer));
+            }
+        });
     }
-
-
 }
 
 

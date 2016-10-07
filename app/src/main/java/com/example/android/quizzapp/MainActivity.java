@@ -17,6 +17,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import static com.example.android.quizzapp.R.id.topic;
 import static com.example.android.quizzapp.R.layout.activity_main;
 import static com.example.android.quizzapp.R.layout.activity_questions;
 
@@ -45,12 +46,19 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         rdb_selected = (RadioButton) findViewById(i);
 
         String heading = rdb_selected.getText().toString();
+        //String question = rdb_selected.getText().toString();
 
         Intent intent = new Intent(this, Questions.class);
         intent.putExtra("Head", heading);
         startActivity(intent);
+
+       /* Intent questionText = new Intent(this, Questions.class);
+        questionText.putExtra("Question", question);
+        startActivity(questionText);*/
+
     }
 
+    ;
 }
 
 
