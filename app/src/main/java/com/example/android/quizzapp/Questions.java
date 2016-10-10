@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.LV;
@@ -26,6 +27,7 @@ import static com.example.android.quizzapp.R.id.rdgWater;
 import static com.example.android.quizzapp.R.id.sports;
 import static com.example.android.quizzapp.R.id.swimming;
 import static com.example.android.quizzapp.R.id.topic;
+import static com.example.android.quizzapp.R.layout.activity_main;
 import static com.example.android.quizzapp.R.layout.activity_questions;
 
 public class Questions extends AppCompatActivity
@@ -38,6 +40,7 @@ public class Questions extends AppCompatActivity
     TextView topic;
     RadioButton selected;
     TextView question;
+    int score = 0;
 
 
     @Override
@@ -56,6 +59,7 @@ public class Questions extends AppCompatActivity
         VF = (ViewFlipper) findViewById(R.id.ViewFlipper);
         question = (TextView) findViewById(R.id.questions);
 
+        //set question to relevant
         if (top.equalsIgnoreCase("fashion"))
         {
             question.setText(getString(R.string.nn_vintage));
@@ -101,14 +105,18 @@ public class Questions extends AppCompatActivity
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
                         topic.setText("Fashion");
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.nakhane:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.nhlanhla:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score = 10;
                         break;
 
                 }
@@ -121,6 +129,7 @@ public class Questions extends AppCompatActivity
         RadioButton radPrada = (RadioButton) findViewById(R.id.prada);
         RadioButton radLoius = (RadioButton) findViewById(R.id.louisV);
         RadioButton radGucci = (RadioButton) findViewById(R.id.gucci);
+
 
         rdgLV.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -135,15 +144,18 @@ public class Questions extends AppCompatActivity
                     case R.id.prada:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgNike)));
-
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.louisV:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgNike)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.gucci:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgNike)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -171,18 +183,24 @@ public class Questions extends AppCompatActivity
                     case R.id.nike:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgHeels)));
+                        score = score + 10;
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.adidas:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgHeels)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.puma:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgHeels)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
+
 
                 }
                 question.setText(getString(R.string.Stiletto));
+
             }
         });
 
@@ -208,14 +226,18 @@ public class Questions extends AppCompatActivity
                     case R.id.stilleto:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJeans)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.pump:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJeans)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.sandal:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJeans)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -243,14 +265,18 @@ public class Questions extends AppCompatActivity
                     case R.id.jeans:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.denim:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.dungaree:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -277,15 +303,18 @@ public class Questions extends AppCompatActivity
                     case R.id.food:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgPregnancy)));
-
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.oxygen:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgPregnancy)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.water:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgPregnancy)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
 
                 }
@@ -313,15 +342,18 @@ public class Questions extends AppCompatActivity
                     case R.id.malnutrition:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgWeight_Loss)));
-
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.pregnancy:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgWeight_Loss)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.anorexia:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgWeight_Loss)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -348,11 +380,13 @@ public class Questions extends AppCompatActivity
                     case R.id.True:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJogging)));
-
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.False:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJogging)));
+                        score = score + 10;
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -380,15 +414,18 @@ public class Questions extends AppCompatActivity
                     case R.id.jogging:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgEggs)));
-
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.vodka:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgEggs)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.sex:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgEggs)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -415,14 +452,18 @@ public class Questions extends AppCompatActivity
                     case R.id.egg:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.orange:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.pawpaw:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -450,14 +491,18 @@ public class Questions extends AppCompatActivity
                     case R.id.basketBall:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgGolf)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.jockeys:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgGolf)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.olympians:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgGolf)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -485,14 +530,18 @@ public class Questions extends AppCompatActivity
                     case R.id.golf:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.tennisSport)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.tennis:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.tennisSport)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.cricket:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.tennisSport)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -519,14 +568,18 @@ public class Questions extends AppCompatActivity
                     case R.id.usa:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.christianoRonaldo)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.wimbledon:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.christianoRonaldo)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.greatBritain:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.christianoRonaldo)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
 
                 }
@@ -553,14 +606,18 @@ public class Questions extends AppCompatActivity
                     case R.id.ronaldo:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.football)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.lionel:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.football)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.david:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.football)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -573,7 +630,7 @@ public class Questions extends AppCompatActivity
         RadioGroup rdgFootball = (RadioGroup) findViewById(R.id.football);
         RadioButton rdbSoccer = (RadioButton) findViewById(R.id.soccer);
         RadioButton rdbBasket = (RadioButton) findViewById(R.id.basket);
-        RadioButton rdbSwimming = (RadioButton) findViewById(swimming);
+        RadioButton rdbSwimming = (RadioButton) findViewById(R.id.swimming);
 
         rdgFootball.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -587,14 +644,18 @@ public class Questions extends AppCompatActivity
                     case R.id.soccer:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_LONG).show();
+                        score = score + 10;
                         break;
                     case R.id.basket:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.swimming:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
+                        Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_LONG).show();
                         break;
 
                 }
