@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/quizz3"
-    android:orientation="vertical"
-    android:weightSum="1"
-
-    tools:context="com.example.android.quizzapp.MainActivity">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_main"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/circle"
+              android:orientation="vertical"
+              android:weightSum="1"
+              tools:context="com.example.android.quizzapp.MainActivity">
 
 
     <TextView
@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
         android:background="@color/white"
         android:fontFamily="casual"
         android:paddingLeft="30dp"
@@ -29,16 +30,15 @@
 
     <TextView
         android:id="@+id/topic"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:background="@color/orange"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
         android:fontFamily="casual"
         android:padding="5dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="30sp"
-
         />
 
     <TextView
@@ -46,8 +46,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@color/darkPurple"
-        android:fontFamily="sans-serif-condensed"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-light"
         android:paddingLeft="30dp"
         android:text="@string/nn_vintage"
         android:textColor="@color/white"
@@ -59,45 +59,49 @@
         android:id="@+id/ViewFlipper"
         android:layout_width="288dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        >
 
 
         <RadioGroup
             android:id="@+id/rdgNN_Vintage"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="250dp"
             android:layout_marginLeft="50dp"
-
-
+            android:layout_weight="1"
             >
 
             <RadioButton
                 android:id="@+id/nonhle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
                 android:text="@string/rdbNonhle_Ndala"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                />
 
             <RadioButton
                 android:id="@+id/nakhane"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
                 android:text="@string/rdbNakhane_Toure"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/nhlanhla"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
                 android:text="@string/rdbNhlanhla_Nciza"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
 
         </RadioGroup>
@@ -106,137 +110,187 @@
         <RadioGroup
             android:id="@+id/rdgLV"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/prada"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbPrada" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbPrada"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/louisV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbLouisV" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbLouisV"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/gucci"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbGucci" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbGucci"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
         </RadioGroup>
 
         <RadioGroup
             android:id="@+id/rdgNike"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/nike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbNike" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbNike"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/adidas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbAdidas" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbAdidas"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/puma"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbPuma" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbPuma"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
         </RadioGroup>
 
         <RadioGroup
             android:id="@+id/rdgJeans"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/jeans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbJeans" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbJeans"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/denim"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbDenim" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbDenim"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/dungaree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbDungaree" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbDungaree"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
         </RadioGroup>
 
 
         <RadioGroup
             android:id="@+id/rdgHeels"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/stilleto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbStilleto" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbStilleto"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/pump"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbPump" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbPump"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/sandal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbSandal" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbSandal"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
         </RadioGroup>
 
         <RadioGroup
             android:id="@+id/rdgWater"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/food"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbFood" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbFood"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/oxygen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbOxygen" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbOxygen"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/water"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbWater" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbWater"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
         </RadioGroup>
 
@@ -244,131 +298,179 @@
         <RadioGroup
             android:id="@+id/rdgPregnancy"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/malnutrition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbMalnutrition" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbMalnutrition"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/pregnancy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbPregnancy" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbPregnancy"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                />
 
             <RadioButton
                 android:id="@+id/anorexia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbAnorexia" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbAnorexia"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
         </RadioGroup>
 
         <RadioGroup
             android:id="@+id/rdgWeight_Loss"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/True"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbTrue" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbTrue"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/False"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbFalse" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbFalse"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
         </RadioGroup>
 
         <RadioGroup
             android:id="@+id/rdgJogging"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/jogging"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbJogging" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbJogging"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/vodka"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbVodka" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbVodka"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/sex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbSex" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbSex"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
         </RadioGroup>
 
 
         <RadioGroup
             android:id="@+id/rdgEggs"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/egg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbEgg" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbEgg"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/orange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbOrange" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbOrange"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/pawpaw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbPawPaw" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbPawPaw"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
         </RadioGroup>
 
         <RadioGroup
             android:id="@+id/rdgJockeys"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/basketBall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbBasketball" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbBasketball"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/jockeys"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbJockeys" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbJockeys"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/olympians"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbOlympians" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbOlympians"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
         </RadioGroup>
 
@@ -376,111 +478,156 @@
         <RadioGroup
             android:id="@+id/rdgGolf"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/golf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbGolf" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbGolf"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/tennis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbTennis" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbTennis"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/cricket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbCricket" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbCricket"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
         </RadioGroup>
 
         <RadioGroup
             android:id="@+id/tennisSport"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/usa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbUsa" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbUsa"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/wimbledon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbWimbledon" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbWimbledon"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/greatBritain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbBritain" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbBritain"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
         </RadioGroup>
 
         <RadioGroup
             android:id="@+id/christianoRonaldo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/ronaldo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbChristiano" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbChristiano"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/lionel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbLionel" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbLionel"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
 
             <RadioButton
                 android:id="@+id/david"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbDavidBekham" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbDavidBekham"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                />
         </RadioGroup>
 
 
         <RadioGroup
             android:id="@+id/football"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/soccer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbSoccer" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbSoccer"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                />
 
             <RadioButton
                 android:id="@+id/basket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbBasketBall" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbBasketBall"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+
+                />
 
             <RadioButton
                 android:id="@+id/swimming"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="@string/rdbSwimming" />
+                android:buttonTint="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/rdbSwimming"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                />
         </RadioGroup>
 
         <TextView
@@ -488,12 +635,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:background="@color/darkPurple"
             android:fontFamily="sans-serif-condensed"
-            android:paddingLeft="30dp"
+            android:paddingLeft="20sp"
             android:textColor="@color/white"
             android:textSize="18sp"
 
             />
+
     </ViewFlipper>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:fontFamily="casual"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="30sp"
+
+        />
+
 </LinearLayout>

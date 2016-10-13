@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    tools:context="com.example.android.quizzapp.MainActivity"
-
-    >
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_main"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical"
+              tools:context="com.example.android.quizzapp.MainActivity">
 
 
     <TextView
@@ -29,6 +27,7 @@
 
         />
     <TextView
+        android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -36,8 +35,8 @@
         android:layout_weight="1"
         android:background="@color/orange"
         android:fontFamily="casual"
-        android:padding="8dp"
         android:text="@string/welcome_message"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
 

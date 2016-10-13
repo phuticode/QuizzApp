@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -18,6 +19,7 @@ import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import static com.example.android.quizzapp.R.id.topic;
+import static com.example.android.quizzapp.R.id.welcome;
 import static com.example.android.quizzapp.R.layout.activity_main;
 import static com.example.android.quizzapp.R.layout.activity_questions;
 
@@ -25,9 +27,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     RadioButton rdb_selected;
     RadioGroup radioM;
-
+    TextView welcome;
     //Global Variables
     ViewFlipper VF;
+    boolean is_first_run = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +39,26 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         radioM = (RadioGroup) findViewById(R.id.rdgMain);
         radioM.setOnCheckedChangeListener(this);
-
+        welcome = (TextView) findViewById(R.id.welcome);
+        Intent i = getIntent();
+        String welcome1 = i.getStringExtra("Welcome");
 
     }
 
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        if (is_first_run)
+        {
+            welcome.setText(getResources().getString(R.string.welcome_message));
+        } else
+        {
+            welcome.setText(getResources().getString(R.string.topic));
+        }
+        is_first_run = false;
+    }
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -47,18 +66,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         String heading = rdb_selected.getText().toString();
         //String question = rdb_selected.getText().toString();
-
+        // welcome.setVisibility(View.GONE);
         Intent intent = new Intent(this, Questions.class);
         intent.putExtra("Head", heading);
         startActivity(intent);
-
-       /* Intent questionText = new Intent(this, Questions.class);
-        questionText.putExtra("Question", question);
-        startActivity(questionText);*/
-
     }
-
-    ;
 }
 
 

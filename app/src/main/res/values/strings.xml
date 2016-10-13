@@ -3,6 +3,7 @@
     <string name="fashion">Fashion</string>
     <string name="Health">Health </string>
     <string name="Sports">Sports </string>
+    <string name="topic">Select A Topic Below </string>
     <string name="welcome_message">Welcome To Quiz App.You are given three categories below, of which each contain 5 questions with three possible answers. Choose a topic and answer away...
         \n Results will be provided after all five questions have been answered. ENJOY!!! </string>
 
@@ -35,7 +36,7 @@
     //Stiletto options
     <string name="rdbStilleto">Stilleto</string>
     <string name="rdbPump">High Heel Pumps </string>
-    <string name="rdbSandal">High Heel Sandals dals</string>
+    <string name="rdbSandal">High Heel Sandals</string>
 
     //Health 2 questions
     <string name="Water">What is the most vital to all source of life? </string>
@@ -70,7 +71,7 @@
 
 
     //Sports Questions
-    <string name="Jockeys">It is customary for ___________ to be paid in coins, no matter how arge their winnings </string>
+    <string name="Jockeys">It is customary for ___________ to be paid in coins, no matter how large their winnings </string>
     //jockey options
     <string name="rdbBasketBall">Basket Ball Players</string>
     <string name="rdbJockeys">Jockeys</string>
