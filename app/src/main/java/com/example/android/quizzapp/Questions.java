@@ -34,6 +34,7 @@ import static com.example.android.quizzapp.R.id.topic;
 import static com.example.android.quizzapp.R.id.welcome;
 import static com.example.android.quizzapp.R.layout.activity_main;
 import static com.example.android.quizzapp.R.layout.activity_questions;
+import static com.example.android.quizzapp.R.string.rdbPregnancy;
 
 public class Questions extends AppCompatActivity
 {
@@ -73,6 +74,7 @@ public class Questions extends AppCompatActivity
 
 
 
+
         //set question to relevant
         if (top.equalsIgnoreCase("fashion"))
         {
@@ -86,6 +88,8 @@ public class Questions extends AppCompatActivity
                     "\n" + getResources().getString(R.string.rdbNike) +
                     "\n" + getResources().getString(R.string.rdbStilleto) +
                     "\n" + getResources().getString(R.string.rdbDenim));
+
+            // results.setTextColor(getColor(android.R.color.holo_green_light));
         } else if (top.equalsIgnoreCase("health"))
         {
             question.setText(getString(R.string.Water));
@@ -94,7 +98,7 @@ public class Questions extends AppCompatActivity
 
             //set the correct anaswers to the results window
             results.setText("" + getResources().getString(R.string.rdbWater) +
-                    "\n" + getResources().getString(R.string.rdbPregnancy) +
+                    "\n" + getResources().getString(rdbPregnancy) +
                     "\n" + getResources().getString(R.string.rdbFalse) +
                     "\n" + getResources().getString(R.string.rdbJogging) +
                     "\n" + getResources().getString(R.string.rdbEgg));
@@ -117,10 +121,9 @@ public class Questions extends AppCompatActivity
          * Find the views declared in questions.xml. for nn_Vintage
          */
         RadioGroup rdgNN = (RadioGroup) findViewById(R.id.rdgNN_Vintage);
-        RadioButton radNonhle = (RadioButton) findViewById(R.id.nonhle);
-        RadioButton radNakhane = (RadioButton) findViewById(R.id.nakhane);
-        RadioButton radNhlanhla = (RadioButton) findViewById(R.id.nhlanhla);
-
+        final RadioButton radNonhle = (RadioButton) findViewById(R.id.nonhle);
+        final RadioButton radNakhane = (RadioButton) findViewById(R.id.nakhane);
+        final RadioButton radNhlanhla = (RadioButton) findViewById(R.id.nhlanhla);
 
         rdgNN.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -128,9 +131,7 @@ public class Questions extends AppCompatActivity
             public void onCheckedChanged(RadioGroup group, int checkedId)
             {
                 question.setText(getString(R.string.nn_vintage));
-
                 RadioButton sl = (RadioButton) findViewById(checkedId);
-
                 String selected = sl.getText().toString();
 
                 switch (checkedId)
@@ -141,11 +142,13 @@ public class Questions extends AppCompatActivity
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
                         topic.setText("Fashion");
                         Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_SHORT).show();
+                        radNonhle.setTextColor(getColor(android.R.color.holo_green_light));
                         break;
                     case R.id.nakhane:
                         VF.setDisplayedChild(1);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
                         Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_SHORT).show();
+                        radNakhane.setTextColor(getColor(android.R.color.holo_red_light));
                         break;
                     case R.id.nhlanhla:
                         scores = scores + 10;
@@ -153,6 +156,7 @@ public class Questions extends AppCompatActivity
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgLV)));
                         Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_SHORT).show();
                         points.setText("Score : " + scores);
+                        radNhlanhla.setTextColor(getColor(android.R.color.holo_red_light));
                         break;
 
                 }
@@ -163,10 +167,9 @@ public class Questions extends AppCompatActivity
        /* Find the views declared in questions.xml. for LV
                 */
         RadioGroup rdgLV = (RadioGroup) findViewById(R.id.rdgLV);
-        RadioButton radPrada = (RadioButton) findViewById(R.id.prada);
-        RadioButton radLoius = (RadioButton) findViewById(R.id.louisV);
-        RadioButton radGucci = (RadioButton) findViewById(R.id.gucci);
-
+        final RadioButton radPrada = (RadioButton) findViewById(R.id.prada);
+        final RadioButton radLoius = (RadioButton) findViewById(R.id.louisV);
+        final RadioButton radGucci = (RadioButton) findViewById(R.id.gucci);
 
         rdgLV.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -182,6 +185,7 @@ public class Questions extends AppCompatActivity
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgNike)));
                         Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_SHORT).show();
+                        radPrada.setTextColor(getColor(android.R.color.holo_red_light));
                         break;
                     case R.id.louisV:
                         VF.setDisplayedChild(1);
@@ -189,11 +193,13 @@ public class Questions extends AppCompatActivity
                         Toast.makeText(Questions.this, "Correct ", Toast.LENGTH_SHORT).show();
                         scores = scores + 10;
                         points.setText("Score : " + scores);
+                        radLoius.setTextColor(getColor(android.R.color.holo_green_light));
                         break;
                     case R.id.gucci:
                         VF.setDisplayedChild(2);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgNike)));
                         Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_SHORT).show();
+                        radGucci.setTextColor(getColor(android.R.color.holo_red_light));
                         break;
 
                 }
@@ -328,8 +334,8 @@ public class Questions extends AppCompatActivity
            /*
          * Find the views declared in questions.xml. for Water
          */
-        RadioGroup rdgWater = (RadioGroup) findViewById(R.id.rdgWater);
-        RadioButton radFood = (RadioButton) findViewById(R.id.food);
+        final RadioGroup rdgWater = (RadioGroup) findViewById(R.id.rdgWater);
+        final RadioButton radFood = (RadioButton) findViewById(R.id.food);
         RadioButton radOxygen = (RadioButton) findViewById(R.id.oxygen);
         RadioButton radWater = (RadioButton) findViewById(R.id.water);
 
@@ -346,6 +352,7 @@ public class Questions extends AppCompatActivity
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgPregnancy)));
                         Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_SHORT).show();
+
                         break;
                     case R.id.oxygen:
                         VF.setDisplayedChild(1);
@@ -360,8 +367,13 @@ public class Questions extends AppCompatActivity
                         points.setText("Score : " + scores);
                         break;
 
+
                 }
                 question.setText(getString(R.string.Pregnancy));
+                checkedId = rdgWater.getCheckedRadioButtonId();
+                RadioButton radfood = (RadioButton) findViewById(checkedId);
+                String selected = radFood.getText().toString();
+
             }
         });
 
@@ -381,7 +393,6 @@ public class Questions extends AppCompatActivity
 
                 switch (checkedId)
                 { //set the Model to hold the answer the user picked
-
                     case R.id.malnutrition:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgWeight_Loss)));
@@ -399,12 +410,10 @@ public class Questions extends AppCompatActivity
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgWeight_Loss)));
                         Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_SHORT).show();
                         break;
-
                 }
                 question.setText(getString(R.string.Weight_Loss));
             }
         });
-
            /*
          * Find the views declared in questions.xml. for weight-loss
          */
@@ -420,7 +429,6 @@ public class Questions extends AppCompatActivity
 
                 switch (checkedId)
                 { //set the Model to hold the answer the user picked
-
                     case R.id.True:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.rdgJogging)));
@@ -566,7 +574,7 @@ public class Questions extends AppCompatActivity
          * Find the views declared in questions.xml. for Golf Balls
          */
         RadioGroup rdgGolf = (RadioGroup) findViewById(R.id.rdgGolf);
-        RadioButton radGolf = (RadioButton) findViewById(R.id.golf);
+        final RadioButton radGolf = (RadioButton) findViewById(R.id.golf);
         RadioButton radTennis = (RadioButton) findViewById(R.id.tennis);
         RadioButton radCricket = (RadioButton) findViewById(R.id.cricket);
 
@@ -647,16 +655,13 @@ public class Questions extends AppCompatActivity
         RadioButton rdbRonaldo = (RadioButton) findViewById(R.id.ronaldo);
         RadioButton rdbLionel = (RadioButton) findViewById(R.id.lionel);
         RadioButton rdbDavid = (RadioButton) findViewById(david);
-
         rdgChristiano.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
 
             public void onCheckedChanged(RadioGroup group, int checkedId)
             {
-
                 switch (checkedId)
                 { //set the Model to hold the answer the user picked
-
                     case R.id.ronaldo:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.football)));
@@ -674,7 +679,6 @@ public class Questions extends AppCompatActivity
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.football)));
                         Toast.makeText(Questions.this, "Incorrect ", Toast.LENGTH_SHORT).show();
                         break;
-
                 }
                 question.setText(getString(R.string.Soccer));
             }
@@ -684,18 +688,15 @@ public class Questions extends AppCompatActivity
          */
         RadioGroup rdgFootball = (RadioGroup) findViewById(R.id.football);
         RadioButton rdbSoccer = (RadioButton) findViewById(R.id.soccer);
-        RadioButton rdbBasket = (RadioButton) findViewById(R.id.basket);
+        final RadioButton rdbBasket = (RadioButton) findViewById(R.id.basket);
         RadioButton rdbSwimming = (RadioButton) findViewById(R.id.swimming);
-
         rdgFootball.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
 
             public void onCheckedChanged(RadioGroup group, int checkedId)
             {
-
                 switch (checkedId)
                 { //set the Model to hold the answer the user picked
-
                     case R.id.soccer:
                         VF.setDisplayedChild(0);
                         VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.results)));
@@ -719,14 +720,12 @@ public class Questions extends AppCompatActivity
                         //  VF.setDisplayedChild(VF.indexOfChild(findViewById(R.id.button)));
                         topic.setText("Results");
                         break;
-
                 }
                 question.setText("Correct Answers                   Your Answers");
+
             }
         });
-
     }
-
 }
 
 
